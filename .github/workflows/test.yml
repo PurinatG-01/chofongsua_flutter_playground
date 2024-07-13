@@ -1,0 +1,19 @@
+name: Flutter Test
+
+on:
+  push:
+    branches: [ main ]  # Change to your branch(es)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Or your desired runner OS
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+            channel: stable
+            flutter-version: 3.22.2
+      - run: flutter pub get  # Download dependencies
+      - run: flutter analyze
+      - run: flutter test  # Run tests with coverage report
