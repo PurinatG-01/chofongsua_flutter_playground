@@ -5,7 +5,7 @@ on:
     branches: [ main ]  # Change to your branch(es)
 
 jobs:
-  build:
+  Testing:
     runs-on: ubuntu-latest  # Or your desired runner OS
     steps:
       - uses: actions/checkout@v3
